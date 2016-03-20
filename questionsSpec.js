@@ -30,7 +30,7 @@ describe('javascriptRefresher', function(){
   it('makes every possible pairing of students', function(){
     var result = everyPossiblePair(['Jon', 'Tyrion', 'Daenerys']);
     // sorted alphabetically
-    expect(result).toEqual([[ 'Daenerys', 'Jon' ], [ 'Daenerys', 'Tyrion' ], [ 'Jon', 'Tyrion' ]] );
+    expect(result).toEqual([ [ 'Jon', 'Tyrion' ],[ 'Jon', 'Daenerys' ], [ 'Tyrion', 'Daenerys' ]] );
   });
 
   it('takes all elements except the first 3', function(){
