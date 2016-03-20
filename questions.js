@@ -174,39 +174,92 @@ var convertArrayToObject = function(array) {
 }
 
 var getAllLetters = function(array) {
-  return 'Write your method here';
+  var letters = [];
+  for(var i = 0; i < array.length; i++) {
+    letters.push(array[i].split(''));
+  }
+  letters = [].concat.apply([],letters);
+  for(var i = 0; i < letters.length; i++) {
+    for(var j = i + 1; j < letters.length; j++)
+    if (letters[i] === letters[j]) {
+      letters.splice(j,1);
+    }
+  }
+  return letters.sort();
 }
 
 var swapKeysAndValues = function(object) {
-  return 'Write your method here';
+  var swapped = {};
+  for(var i in object) {
+    swapped[object[i]] = i;
+  }
+  return swapped;
 }
 
 var sumKeysAndValues = function(object) {
-  return 'Write your method here';
+  var sum = 0;
+  for(var i in object) {
+    sum += object[i]*1;
+    sum += i*1;
+  }
+  return sum;
 }
 
 var removeCapitals = function(string) {
-  return 'Write your method here';
+  return string.replace(/[A-Z]/g, '');
 }
 
 var roundUp = function(number) {
-  return 'Write your method here';
+  return Math.ceil(number);
 }
 
 var formatDateNicely = function(date) {
-  return 'Write your method here';
+  return ('0' + date.getDate()).slice(-2) + '/'
+       + ('0' + (date.getMonth() + 1)).slice(-2) + '/'
+       + date.getFullYear();
 }
 
 var getDomainName = function(string) {
-  return 'Write your method here';
+  var domain = '';
+  for(var i = 0; i < string.length; i++) {
+    if (string[i] === '@') {
+      for(var j=i + 1; j < string.length-4; j++) { 
+        domain += string[j];
+      }
+    }
+  }
+  return domain;
 }
 
 var titleize = function(string) {
-  return 'Write your method here';
+  var words = string.split(' ');
+  var newString = '';
+  for(var i = 0; i < words.length; i++) {
+    if (i > 0) {
+      var previousChar = (words[i-1]).slice(-1);
+    }
+    if (i === 0) {
+      newString += words[i][0].toUpperCase() + words[i].slice(1);
+    } 
+    else if (words[i].length > 3) {
+      newString += words[i][0].toUpperCase() + words[i].slice(1);
+    }
+    else if ( previousChar === '.') {
+      newString += words[i][0].toUpperCase() + words[i].slice(1);
+    }
+    else {
+      newString += words[i];
+    }
+    if (i < words.length - 1) {
+      newString += ' ';
+    }
+  }
+  return newString;
+
 }
 
 var checkForSpecialCharacters = function(string) {
-  return 'Write your method here';
+
 }
 
 var squareRoot = function(number) {

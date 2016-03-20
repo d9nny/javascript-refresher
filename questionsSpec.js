@@ -117,7 +117,7 @@ describe('javascriptRefresher', function(){
     var result2 = getAllLetters(['cat', 'dog', 'fish', 'cat']);
     expect(result2).toEqual(['a', 'c', 'd', 'f', 'g', 'h', 'i', 'o', 's', 't']);
   });
-
+  
   it('swaps keys and values in an object', function(){
     var result = swapKeysAndValues({'Frodo': 'Baggins', 'Samwise': 'Gamgee', 'Gandalf': 'The Gray'});
     expect(result).toEqual({'Baggins': 'Frodo', 'Gamgee': 'Samwise', 'The Gray': 'Gandalf'});
